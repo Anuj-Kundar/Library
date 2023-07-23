@@ -1,11 +1,24 @@
 // reference to DOM elements
 const modal = document.getElementById("modal");
-const addBooksBtn =document.querySelector(".btn-add-books");
+const addBooksBtn = document.querySelector(".btn-add-books");
 const form = document.querySelector("form");
-const flexContainer=document.querySelector(".flex-container");
+const flexContainer = document.querySelector(".flex-container");
 
 // store books in this array
-let myLibrary = [];
+let library = [
+    {
+        title: "Red Rising",
+        author: "Pierce Brown",
+        pages: "429",
+        isRead: true,
+    },
+    {
+        title: "Fire & Blood",
+        author: "George R. R. Martin",
+        pages: 736,
+        isRead: false,
+    },
+];;
 
 // Book constructor
 function Book(title, author, pages, isRead) {
@@ -20,10 +33,18 @@ function Book(title, author, pages, isRead) {
 }
 
 function addBookToLibrary() {
-    
+    library.push(book);
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
+function displaybook() {
+     flexContainer.innerHTML=""; //-> will clear if any existing books are present
+    
+    // creating cards to display books
+    library.forEach((book, index)=>{
+        const card = createCard(book,index);
+        flexContainer.appendChild(card);
+    });
 
-console.log(theHobbit.info());
+
+}
 
