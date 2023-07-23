@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --px-xl: 0 150px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #2c3639;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #dcd7c9;
+}
+
+button {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  background: none;
+  color: #dcd7c9;
+  font-weight: 600;
+  border: 2px solid #dcd7c9;
+  padding: 10px 35px;
+  border-radius: 12px;
+}
+
+button:hover {
+  background-color: #dcd7c9;
+  color: #2c3639;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.visible {
+    display: flex !important;
+}
+
+form {
+  position: relative;
+  color: #2c3639;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 60%;
+  background-color: #dcd7c9;
+  padding: 60px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+form a {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: black;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  font-size: 1.25rem;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 0.25em;
+  font-weight: 600;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 1px #2c3639;
+}
+
+.input-group.checkbox-group {
+  display: block;
+}
+
+.input-group.checkbox-group input {
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+#addToLibrary {
+  background: #2c3639;
+  padding: 20px;
+  border: none;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  transition: all 0.25s ease;
+}
+
+#addToLibrary:hover {
+  transform: translateY(-2px);
+  color: #dcd7c9;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--px-xl);
+}
+
+section.flex-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  width: 100%;
+  padding: var(--px-xl);
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #dcd7c9;
+  border-radius: 20px;
+  color: #2c3639;
+  padding: 20px;
+  box-shadow: 0px 3px 10px #000;
+}
+
+.card .text-group {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card .text-group .text-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card .text-group .text-author {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.card .text-group .text-pages {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.card .button-group {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
+  left: 50%;
+  padding: 0 20px;
+  transform: translate(-50%, -50%);
+}
+
+.card .button-group button {
+  border: 2px solid #2c3639;
+  color: #2c3639;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card .button-group .btn-read {
+  border: 2px solid #000;
+  color: white;
+  background: #28a745;
+  transition: all 0.1s ease;
+}
+
+.card .button-group .btn-read:hover {
+  transform: translateY(-2px);
+}
+
+.card .button-group .btn-remove {
+  border: 2px solid #000;
+  color: white;
+  background: #ff0000;
+  transition: all 0.1s ease;
+}
+
+.card .button-group .btn-remove:hover {
+  transform: translateY(-2px);
+}
