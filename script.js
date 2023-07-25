@@ -68,7 +68,26 @@ function createCard(book,index){
     const buttonGroup=document.createElement("div");
     buttonGroup.classList.add("button-group")
 
+    const btnRead=document.createElement("button");
+    btnRead.textContent=book.isRead?"Read":"Not Read";
+    btnRead.classList.add("btn-read");
+    btnRead.addEventListener("click", () => toggleReadStatus(index));
+
+    const btnRemove=document.createElement("button");
+    btnRemove.textContent="Remove";
+    btnRemove.classList.add("btn-remove");
+    btnRemove.addEventListener("click",()=>removeBook(index))
+
+    buttonGroup.appendChild(btnRead);
+    buttonGroup.appendChild(btnRemove);
+
+    card.appendChild(textGroup);
+    card.appendChild(buttonGroup);
+
+    return card;
 }
+
+
 
 
 
